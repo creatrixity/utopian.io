@@ -1,14 +1,24 @@
 import store from 'store';
 import _ from 'lodash';
 
+import Promise from 'bluebird';
+import SteemConnect from 'sc2-sdk';
+import omit from 'lodash/omit';
+
+Promise.promisifyAll(SteemConnect, { context: SteemConnect });
+
+const getMetadata = () => SteemConnect.me().then(resp => resp.user_metadata);
+
 export const getDrafts = () => store.get('drafts') || {};
 
-export const addDraftLocaleStorage = (draft) => new Promise(function(resolve, reject) {
-  const drafts = store.get('drafts') || {};
-  drafts[draft.id] = draft.postData;
-  store.set('drafts', drafts);
-  resolve(drafts[draft.id]);
-});
+export const addDraftLocaleStorage = (draft) => getMetadata()
+  .then(metadata => {
+    const drafts = store.get('drafts') || {};
+    drafts[draft.id] = draft.postData;
+    store.set('drafts', drafts);
+    return drafts;
+  })
+  .then(drafts => drafts[draft.id]);
 
 export const deleteDraftLocaleStorage = (draftId) => new Promise(function(resolve, reject) {
   const drafts = store.get('drafts') || {};
