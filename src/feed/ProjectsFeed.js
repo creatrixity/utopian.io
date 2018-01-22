@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import ReduxInfiniteScroll from 'redux-infinite-scroll';
+import ReduxInfiniteScroll from '../vendor/ReduxInfiniteScroll';
 
 import {
   getAuthenticatedUser,

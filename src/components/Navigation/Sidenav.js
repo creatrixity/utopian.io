@@ -7,15 +7,23 @@ import CategoryIcon from "../CategoriesIcons/index";
 import './Sidenav.less';
 
 const isActive = (item, match, location) => location.pathname === item;
+const isNews = (match, location) => location.pathname.match(/trending/);
+const isWallet = (match, location) => location.pathname.match(/wallet/);
 
-const Sidenav = ({ username }) =>
-  (<div>
+const Sidenav = ({ username }) => (
+  <div>
     {username &&
       <ul className="Sidenav" style={{listStyleType: 'none'}}>
         <li>
           <NavLink to={`/@${username}`} activeClassName="Sidenav__item--active">
             <i className="iconfont icon-mine" />
             My profile
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/wallet" activeClassName="Sidenav__item--active" isActive={isWallet}>
+            <i className="iconfont icon-wallet" />
+            <FormattedMessage id="wallet" defaultMessage="Wallet" />
           </NavLink>
         </li>
         <br/><hr />

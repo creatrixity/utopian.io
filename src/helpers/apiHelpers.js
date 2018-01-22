@@ -142,3 +142,20 @@ export const mapToId = (content) => {
 };
 
 export const mapAPIContentToId = apiRes => mapToId(apiRes.content);
+
+export const defaultAccountLimit = 500;
+
+export const getAccountHistory = (account, from = -1, limit = defaultAccountLimit) =>
+  SteemAPI.sendAsync('get_account_history', [account, from, limit]);
+
+export const getDynamicGlobalProperties = () =>
+  SteemAPI.sendAsync('get_dynamic_global_properties', []);
+
+export const isWalletTransaction = actionType =>
+  actionType === accountHistoryConstants.TRANSFER ||
+  actionType === accountHistoryConstants.TRANSFER_TO_VESTING ||
+  actionType === accountHistoryConstants.CANCEL_TRANSFER_FROM_SAVINGS ||
+  actionType === accountHistoryConstants.TRANSFER_FROM_SAVINGS ||
+  actionType === accountHistoryConstants.TRANSFER_TO_SAVINGS ||
+  actionType === accountHistoryConstants.DELEGATE_VESTING_SHARES ||
+  actionType === accountHistoryConstants.CLAIM_REWARD_BALANCE;

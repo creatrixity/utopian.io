@@ -7,6 +7,8 @@ import Wrapper from './Wrapper';
 import Settings from './settings/Settings';
 import ProfileSettings from './app/ProfileSettings';
 import Activity from './activity/Activity';
+import Wallet from './wallet/Wallet';
+import UserWallet from './user/UserWallet';
 
 import Page from './feed/Page';
 import Project from './feed/Project';
@@ -136,6 +138,14 @@ export default (
         render={props => (
           <RequireLogin>
             <GithubConnect {...props}/>
+          </RequireLogin>
+        )}
+      />
+      <Route
+        path="/wallet"
+        render={() => (
+          <RequireLogin>
+            <Wallet />
           </RequireLogin>
         )}
       />
