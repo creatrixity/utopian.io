@@ -277,7 +277,7 @@ class Topnav extends React.Component {
         <div className="Topnav__menu-container">
           <Menu className="Topnav__menu-container__menu" mode="horizontal">
             <Menu.Item key="signup" className="UWhite">
-              <a target="_blank" rel="noopener noreferrer" className="UWhite" href="https://signup.steemit.com/">
+              <a target="_blank" rel="noopener noreferrer" className="UWhite" href="https://signup.steemit.com">
                 <FormattedMessage id="signup" className="UWhite" defaultMessage="Sign up"/>
               </a>
             </Menu.Item>

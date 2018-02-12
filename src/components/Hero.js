@@ -8,7 +8,7 @@ const Hero = () =>
       <h1 className="hero-message">
         <FormattedMessage id="hero" defaultMessage="Ensuring compensation for the creators of value" />
       </h1>
-      <a target="_blank" rel="noopener noreferrer" href="https://signup.steemit.com/">
+      <a target="_blank" rel="noopener noreferrer" href="https://signup.steemit.com">
         <button className="ant-btn-lg hero-signup">
           <FormattedMessage id="signup" defaultMessage="Sign up" />
         </button>
