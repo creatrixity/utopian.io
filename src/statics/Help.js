@@ -11,7 +11,7 @@ export default (props) =>
       >
         You must login to access that page. <a href={sc2.getLoginURL(window.location.pathname.length > 1 ? window.location.pathname : '')}>Log in</a>
         {' '}
-        or <a target="_blank" rel="noopener noreferrer" href="https://steemit.com/pick_account">Sign up with Steemit</a>
+        or <a target="_blank" rel="noopener noreferrer" href="https://signup.steemit.com/">Sign up with Steemit</a>
       </div>
       }
 

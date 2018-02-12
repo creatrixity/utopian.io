@@ -9,7 +9,7 @@ const SignUp = () =>
       <FormattedMessage id="new_to_utopian" defaultMessage="New to Utopian?" />
       <p className="SidebarBlock__desc">Utopian uses the Steem blockchain to reward Open Source contributors.</p>
     </h3>
-    <a target="_blank" rel="noopener noreferrer" href="https://steemit.com/pick_account">
+    <a target="_blank" rel="noopener noreferrer" href="https://signup.steemit.com/">
       <button className="SidebarBlock__button">
         <span className="SidebarBlock__text"><img src="/img/steem.svg" /> Sign up with Steemit</span>
       </button>
