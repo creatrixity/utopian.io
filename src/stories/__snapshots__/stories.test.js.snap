@@ -940,7 +940,7 @@ exports[`Storyshots Navigation Topnav unlogged 1`] = `
               title={undefined}
             >
               <a
-                href="https://steemit.com/pick_account"
+                href="https://signup.steemit.com"
                 rel="noopener noreferrer"
                 target="_blank"
               >
