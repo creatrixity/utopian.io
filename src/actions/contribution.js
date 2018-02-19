@@ -18,6 +18,26 @@ export const createContributionRequest = (author, permlink) => ({
 
 export const createContribution = (author, permlink) => dispatch => dispatch(createContributionRequest(author, permlink));
 
+export const editContributionRequest = (author, permlink, title, body, metadata) => ({
+  [CALL_API]: {
+    types: [ Actions.EDIT_CONTRIBUTION_REQUEST, Actions.EDIT_CONTRIBUTION_SUCCESS, Actions.EDIT_CONTRIBUTION_FAILURE ],
+    endpoint: `posts/edit`,
+    schema: null,
+    method: 'POST',
+    payload: {
+      author,
+      permlink,
+	  title,
+	  body,
+	  'json_metadata': metadata
+    },
+    additionalParams: {},
+    absolute: false
+  }
+});
+
+export const editContribution = (author, permlink, title, body, metadata) => dispatch => dispatch(updateContributionRequest(author, permlink, title, body, metadata));
+
 export const updateContributionRequest = (author, permlink) => ({
   [CALL_API]: {
     types: [ Actions.UPDATE_CONTRIBUTION_REQUEST, Actions.UPDATE_CONTRIBUTION_SUCCESS, Actions.UPDATE_CONTRIBUTION_FAILURE ],
